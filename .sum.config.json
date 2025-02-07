@@ -1,0 +1,28 @@
+{
+  "templateCatalogName": "templateCatalog",
+  "sumCatalog": "./.sum/",
+  "sUpdaterVersion": "latest",
+  "availableSUMSuffix": [
+    "-default.md",
+    "-custom.md",
+    "-extend.md"
+  ],
+  "availableSUMKeySuffix": [
+    "defaultFile",
+    "customFile",
+    "extendFile"
+  ],
+  "sumFileMapConfigFileName": "repositoryMap.json",
+  "sumIgnoreFilePath": "./.sumignore",
+  "sumIgnoreFileName": ".sumignore",
+  "sumFileMapConfig": "./.sum/repositoryMap.json",
+  "projectCatalog": "./",
+  "temporaryFolder": "./.sum/temporary/",
+  "sumConfigFileName": ".sum.config.json",
+  "sumConfigFilePath": "./.sum.config.json",
+  "remoteRootRepositoryUrl": "https://raw.githubusercontent.com/SebastianWesolowski/s-template/dev/templates/NextJs/NextJs15",
+  "remoteRepository": "https://github.com/SebastianWesolowski/s-template/tree/dev/templates/NextJs/NextJs15",
+  "remoteFileMapURL": "https://raw.githubusercontent.com/SebastianWesolowski/s-template/dev/templates/NextJs/NextJs15/templateCatalog/repositoryMap.json",
+  "isDebug": false,
+  "_": []
+}
