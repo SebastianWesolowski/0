@@ -1,19 +1,14 @@
 name: Playwright Tests
 on:
-  push:
-    branches:
-      - main
-      - master
-      - develop
-  pull_request: null
-  workflow_dispatch: null
+push:
+branches: - main - master - develop
+pull_request: null
+workflow_dispatch: null
 jobs:
-  test:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo "node_version=$(cat .github/nodejs.version)" >> $GITHUB_ENV
+test:
+timeout-minutes: 60
+runs-on: ubuntu-latest
+steps: - uses: actions/checkout@v4 - run: echo "node_version=$(cat .github/nodejs.version)" >> $GITHUB_ENV
       - name: "use node ${{ env.node_version }}"
         uses: actions/setup-node@v3
         with:

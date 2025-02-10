@@ -1,20 +1,20 @@
 # Reusable workflow for releases; to eject, you can replace this file with
+
 # https://github.com/SebastianWesolowski/SebastianWesolowski/blob/main/.github/workflows/release.yml
+
 name: Pre Release
 on:
-  push:
-    branches:
-      - dev
+push:
+branches: - dev
 jobs:
-  preRelease:
-    name: Pre Release
-    runs-on: ubuntu-latest
-    steps:
-      - name: '📝 Checkout'
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GH_TOKEN }}
+preRelease:
+name: Pre Release
+runs-on: ubuntu-latest
+steps: - name: '📝 Checkout'
+uses: actions/checkout@v4
+with:
+fetch-depth: 0
+token: ${{ secrets.GH_TOKEN }}
 
       - name: '📥 Read Node.js version'
         run: echo "node_version=$(cat .github/nodejs.version)" >> $GITHUB_ENV

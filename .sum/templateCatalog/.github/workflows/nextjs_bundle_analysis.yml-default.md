@@ -1,28 +1,22 @@
 name: "Next.js Bundle Analysis"
 
 on:
-  push:
-    branches:
-      - main
-      - develop
-  pull_request:
-    branches:
-      - main
-      - develop
-  workflow_dispatch:
+push:
+branches: - main - develop
+pull_request:
+branches: - main - develop
+workflow_dispatch:
 
 defaults:
-  run:
-    # change this if your nextjs app does not live at the root of the repo
-    working-directory: ./
+run: # change this if your nextjs app does not live at the root of the repo
+working-directory: ./
 
 jobs:
-  analyze:
-    env:
-      SKIP_ENV_VALIDATION: true
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+analyze:
+env:
+SKIP_ENV_VALIDATION: true
+runs-on: ubuntu-latest
+steps: - uses: actions/checkout@v4
 
       - name: Set up node
         uses: actions/setup-node@v3
