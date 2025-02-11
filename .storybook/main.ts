@@ -48,6 +48,26 @@ const config: StorybookConfig = {
     backgroundsStoryGlobals: true,
     legacyDecoratorFileOrder: false,
   },
+  webpackFinal: async (config) => {
+    config.module?.rules?.push({
+      test: /\.(css|scss|sass)$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        {
+          loader: 'postcss-loader',
+          options: {
+            postcssOptions: {
+              plugins: ['tailwindcss', 'autoprefixer'],
+            },
+          },
+        },
+        'sass-loader',
+      ],
+    });
+
+    return config;
+  },
 };
 
 export default config;
