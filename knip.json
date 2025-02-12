@@ -1,0 +1,11 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": ["app/**/*.{ts,tsx}", "pages/**/*.{ts,tsx}", "components/**/*.{ts,tsx}", "lib/**/*.{ts,tsx}"],
+  "project": ["**/*.{ts,tsx}"],
+  "ignoreDependencies": ["@types/*", "typescript", "eslint-*", "@typescript-eslint/*"],
+  "ignore": ["**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}", "**/__tests__/**", ".next/**", "node_modules/**"],
+  "ignoreExportsUsedInFile": {
+    "interface": true,
+    "type": true
+  }
+}

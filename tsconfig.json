@@ -23,7 +23,8 @@
       "@/*": ["./*"],
       "@/components/*": ["./components/*"],
       "@/styles/*": ["./styles/*"],
-      "@/app/*": ["./app/*"]
+      "@/app/*": ["./app/*"],
+      "@/utils/*": ["./utils/*"]
     },
     "plugins": [
       {
@@ -46,6 +47,7 @@
     "**/*.mjs",
     "@types/**/*.d.ts",
     "jest.config.js",
+    "jest.setup.js",
     ".next/types/**/*.ts",
     "eslint.config.mjs",
     "*.config.ts",
