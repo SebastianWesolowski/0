@@ -39,6 +39,7 @@ const config: NextConfig = {
     },
     scrollRestoration: true,
   },
+  instrumentationHook: true,
   reactStrictMode: true,
   logging: {
     fetches: {
@@ -64,10 +65,10 @@ const config: NextConfig = {
   ],
   pageExtensions: ['mdx', 'md', 'tsx', 'jsx'],
   sassOptions: {
-    includePaths: [path.join(process.cwd(), './styles')],
+    includePaths: [path.join(process.cwd(), './src/styles')],
   },
   eslint: {
-    dirs: ['components', 'lib', 'pages', 'styles'],
+    dirs: ['src/components', 'src/lib', 'src/pages', 'src/styles', 'src/app'],
   },
   async headers() {
     return [

@@ -10,13 +10,14 @@ const customJestConfig = {
   modulePathIgnorePatterns: ['<rootDir>/dist/'],
   testPathIgnorePatterns: ['<rootDir>/e2e'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1',
-    '^@/components/(.*)$': '<rootDir>/components/$1',
-    '^@/styles/(.*)$': '<rootDir>/styles/$1',
-    '^@/app/(.*)$': '<rootDir>/app/$1',
-    '^@/utils/(.*)$': '<rootDir>/utils/$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@/components/(.*)$': '<rootDir>/src/components/$1',
+    '^@/lib/(.*)$': '<rootDir>/src/lib/$1',
+    '^@/styles/(.*)$': '<rootDir>/src/styles/$1',
+    '^@/app/(.*)$': '<rootDir>/src/app/$1',
+    '^@/utils/(.*)$': '<rootDir>/src/utils/$1',
   },
-  collectCoverageFrom: ['**/*.{js,jsx,ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
+  collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
 };
 
 module.exports = createJestConfig(customJestConfig);

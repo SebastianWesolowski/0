@@ -53,5 +53,5 @@ module.exports = {
     'no-invalid-position-at-import-rule': null,
     'import-notation': null,
   },
-  ignoreFiles: ['node_modules/**/*', 'dist/**/*', '.next/**/*', 'coverage/**/*', 'public/**/*', '**/tailwind.css'],
+  ignoreFiles: ['node_modules/**/*', 'dist/**/*', '.next/**/*', 'coverage/**/*', 'public/**/*'],
 };
