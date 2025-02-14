@@ -1,11 +1,12 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import { Button } from './Button';
-import { maybeSnapshot } from '../../../tools/snapshotUtils';
+
+import { maybeSnapshot } from '../../../../tools/snapshotUtils';
+import { Button } from '.';
 
 describe('Button', () => {
   const defaultProps = {
     href: '#',
-    children: 'Click me'
+    children: 'Click me',
   };
 
   afterEach(cleanup);
@@ -21,25 +22,25 @@ describe('Button', () => {
   });
 
   it('applies small size', () => {
-    const { container } = render(<Button {...defaultProps} size="sm" />);
+    const { container } = render(<Button {...defaultProps} size='sm' />);
     expect(screen.getByRole('link')).toHaveClass('min-h-10');
     maybeSnapshot(container);
   });
 
   it('applies large size', () => {
-    const { container } = render(<Button {...defaultProps} size="lg" />);
+    const { container } = render(<Button {...defaultProps} size='lg' />);
     expect(screen.getByRole('link')).toHaveClass('min-h-12');
     maybeSnapshot(container);
   });
 
   it('applies primary intent', () => {
-    const { container } = render(<Button {...defaultProps} intent="primary" />);
+    const { container } = render(<Button {...defaultProps} intent='primary' />);
     expect(screen.getByRole('link')).toHaveClass('bg-blue-400');
     maybeSnapshot(container);
   });
 
   it('applies secondary intent', () => {
-    const { container } = render(<Button {...defaultProps} intent="secondary" />);
+    const { container } = render(<Button {...defaultProps} intent='secondary' />);
     expect(screen.getByRole('link')).toHaveClass('bg-transparent');
     maybeSnapshot(container);
   });
@@ -51,7 +52,7 @@ describe('Button', () => {
   });
 
   it('merges custom className with default classes', () => {
-    const { container } = render(<Button {...defaultProps} className="custom-class" />);
+    const { container } = render(<Button {...defaultProps} className='custom-class' />);
     const button = screen.getByRole('link');
 
     expect(button).toHaveClass('custom-class');
