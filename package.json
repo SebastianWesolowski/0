@@ -52,6 +52,7 @@
     "prepare": "husky",
     "ℹ️ info:Tools": "ℹ️",
     "mkdir:reports": "mkdir -p reports",
+    "update-vscode-colors": "tsx tools/updateVSCodeColors.ts",
     "next": "next dev --turbo",
     "next:start": "next start",
     "ngrok": "ngrok http 3000",
