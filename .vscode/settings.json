@@ -89,6 +89,6 @@
   },
   "tailwindCSS.validate": true,
   "workbench.colorCustomizations": {
-    "sideBar.border": "#0FFF00"
+    "sideBar.border": "#0ea5FF"
   }
 }
