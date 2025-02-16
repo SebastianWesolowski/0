@@ -35,7 +35,7 @@
     "lint:eslint:fix": "eslint --no-error-on-unmatched-pattern --cache './src/**/*.+(js|jsx|ts|tsx)' --fix",
     "lint:style:check": "stylelint './src/**/*.{css,scss,sass}' --cache --config stylelint.config.js",
     "lint:style:fix": "stylelint './src/**/*.{css,scss,sass}' --cache --fix --config stylelint.config.js",
-    "lint:typescript:check": "tsc --noEmit",
+    "lint:typescript:check": "tsc --noEmit --project ./tsconfig.json",
     "ℹ️ info:Quality": "ℹ️",
     "quality:knip": "knip",
     "quality:coverage": "yarn test:unit --coverage --coverageDirectory=./reports/coverage",
