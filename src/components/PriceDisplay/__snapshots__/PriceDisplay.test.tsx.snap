@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PriceDisplay should apply custom className 1`] = `
+<div>
+  <span
+    class="font-medium inline-flex items-center transition-colors text-base text-red-500"
+    data-testid="price-display"
+  >
+    23,50 zł
+  </span>
+</div>
+`;
+
+exports[`PriceDisplay should combine size and intent variants 1`] = `
+<div>
+  <span
+    class="inline-flex items-center transition-colors text-lg font-semibold text-blue-600"
+    data-testid="price-display"
+  >
+    99,99 zł
+  </span>
+</div>
+`;
+
+exports[`PriceDisplay should render formatted price 1`] = `
+<div>
+  <span
+    class="font-medium inline-flex items-center transition-colors text-base text-gray-900"
+    data-testid="price-display"
+  >
+    23,50 zł
+  </span>
+</div>
+`;
+
+exports[`PriceDisplay should render with different intents 1`] = `
+<div>
+  <span
+    class="font-medium inline-flex items-center transition-colors text-base text-gray-900"
+    data-testid="price-display"
+  >
+    99,99 zł
+  </span>
+</div>
+`;
+
+exports[`PriceDisplay should render with different intents 2`] = `
+<body>
+  <div>
+    <span
+      class="font-medium inline-flex items-center transition-colors text-base text-blue-600"
+      data-testid="price-display"
+    >
+      99,99 zł
+    </span>
+  </div>
+</body>
+`;
+
+exports[`PriceDisplay should render with different intents 3`] = `
+<body>
+  <div>
+    <span
+      class="font-medium inline-flex items-center transition-colors text-base text-green-600"
+      data-testid="price-display"
+    >
+      99,99 zł
+    </span>
+  </div>
+</body>
+`;
+
+exports[`PriceDisplay should render with different intents 4`] = `
+<body>
+  <div>
+    <span
+      class="font-medium inline-flex items-center transition-colors text-base text-amber-600"
+      data-testid="price-display"
+    >
+      99,99 zł
+    </span>
+  </div>
+</body>
+`;
+
+exports[`PriceDisplay should render with different intents 5`] = `
+<body>
+  <div>
+    <span
+      class="font-medium inline-flex items-center transition-colors text-base text-red-600"
+      data-testid="price-display"
+    >
+      99,99 zł
+    </span>
+  </div>
+</body>
+`;
+
+exports[`PriceDisplay should render with different sizes 1`] = `
+<div>
+  <span
+    class="font-medium inline-flex items-center transition-colors text-sm text-gray-900"
+    data-testid="price-display"
+  >
+    99,99 zł
+  </span>
+</div>
+`;
+
+exports[`PriceDisplay should render with different sizes 2`] = `
+<body>
+  <div>
+    <span
+      class="font-medium inline-flex items-center transition-colors text-base text-gray-900"
+      data-testid="price-display"
+    >
+      99,99 zł
+    </span>
+  </div>
+</body>
+`;
+
+exports[`PriceDisplay should render with different sizes 3`] = `
+<body>
+  <div>
+    <span
+      class="inline-flex items-center transition-colors text-lg font-semibold text-gray-900"
+      data-testid="price-display"
+    >
+      99,99 zł
+    </span>
+  </div>
+</body>
+`;
+
+exports[`PriceDisplay should render with different sizes 4`] = `
+<body>
+  <div>
+    <span
+      class="inline-flex items-center transition-colors text-xl font-bold text-gray-900"
+      data-testid="price-display"
+    >
+      99,99 zł
+    </span>
+  </div>
+</body>
+`;

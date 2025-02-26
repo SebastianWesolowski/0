@@ -10,6 +10,7 @@ const customJestConfig = {
   modulePathIgnorePatterns: ['<rootDir>/dist/'],
   testPathIgnorePatterns: ['<rootDir>/e2e'],
   roots: ['<rootDir>/src'],
+  transformIgnorePatterns: ['/node_modules/(?!(uuid|@?react-native.*|@?react-navigation.*))'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@components/(.*)$': '<rootDir>/src/components/$1',
