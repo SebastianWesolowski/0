@@ -1,33 +1,26 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import Link from 'next/link';
-import { type PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { type PropsWithChildren } from 'react';
 
-const footer = cva(
-  [
-    'border-t',
-    'border-slate-800/50',
-    'py-10',
-  ],
-  {
-    variants: {
-      align: {
-        center: ['items-center'],
-        left: ['items-start'],
-        right: ['items-end'],
-      },
-      spacing: {
-        normal: ['py-10'],
-        compact: ['py-6'],
-        spacious: ['py-16'],
-      },
+const footer = cva(['border-t', 'border-slate-800/50', 'py-10'], {
+  variants: {
+    align: {
+      center: ['items-center'],
+      left: ['items-start'],
+      right: ['items-end'],
     },
-    defaultVariants: {
-      align: 'center',
-      spacing: 'normal',
+    spacing: {
+      normal: ['py-10'],
+      compact: ['py-6'],
+      spacious: ['py-16'],
     },
-  }
-);
+  },
+  defaultVariants: {
+    align: 'center',
+    spacing: 'normal',
+  },
+});
 
 export interface FooterProps extends PropsWithChildren, VariantProps<typeof footer> {
   /**
@@ -36,12 +29,7 @@ export interface FooterProps extends PropsWithChildren, VariantProps<typeof foot
   className?: string;
 }
 
-export function Footer({
-  children,
-  className,
-  align,
-  spacing,
-}: FooterProps): React.ReactElement {
+export function Footer({ children, className, align, spacing }: FooterProps): React.ReactElement {
   return (
     <footer className={twMerge(footer({ align, spacing }), className)}>
       <div className='flex flex-col items-center sm:flex-row-reverse sm:justify-between'>

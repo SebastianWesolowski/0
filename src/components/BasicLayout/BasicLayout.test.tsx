@@ -23,11 +23,11 @@ jest.mock('@configs/config', () => ({
 
 // Ensure Header and Footer are properly mocked
 jest.mock('@components/Header', () => ({
-  Header: () => <header data-testid="mock-header">Header</header>,
+  Header: () => <header data-testid='mock-header'>Header</header>,
 }));
 
 jest.mock('@components/Footer', () => ({
-  Footer: () => <footer data-testid="mock-footer">Footer</footer>,
+  Footer: () => <footer data-testid='mock-footer'>Footer</footer>,
 }));
 
 describe('BasicLayout', () => {

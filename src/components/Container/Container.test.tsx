@@ -32,7 +32,7 @@ describe('Container', () => {
 
   it('applies padding variants correctly', () => {
     const { container: containerNone } = render(
-      <Container padding="none">
+      <Container padding='none'>
         <div>Content</div>
       </Container>
     );
@@ -40,7 +40,7 @@ describe('Container', () => {
     expect(divNone.className).not.toContain('px-');
 
     const { container: containerSm } = render(
-      <Container padding="sm">
+      <Container padding='sm'>
         <div>Content</div>
       </Container>
     );
@@ -48,7 +48,7 @@ describe('Container', () => {
     expect(divSm.className).toContain('px-4');
 
     const { container: containerMd } = render(
-      <Container padding="md">
+      <Container padding='md'>
         <div>Content</div>
       </Container>
     );
@@ -56,7 +56,7 @@ describe('Container', () => {
     expect(divMd.className).toContain('px-6');
 
     const { container: containerLg } = render(
-      <Container padding="lg">
+      <Container padding='lg'>
         <div>Content</div>
       </Container>
     );
@@ -68,7 +68,7 @@ describe('Container', () => {
 
   it('applies width variants correctly', () => {
     const { container: containerNormal } = render(
-      <Container width="normal">
+      <Container width='normal'>
         <div>Content</div>
       </Container>
     );
@@ -76,7 +76,7 @@ describe('Container', () => {
     expect(divNormal.className).toContain('max-w-7xl');
 
     const { container: containerNarrow } = render(
-      <Container width="narrow">
+      <Container width='narrow'>
         <div>Content</div>
       </Container>
     );
@@ -84,7 +84,7 @@ describe('Container', () => {
     expect(divNarrow.className).toContain('max-w-5xl');
 
     const { container: containerFull } = render(
-      <Container width="full">
+      <Container width='full'>
         <div>Content</div>
       </Container>
     );

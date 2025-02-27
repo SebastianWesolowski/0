@@ -1,8 +1,8 @@
 'use client';
 
-import config from '@configs';
 import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
+import config from '@configs';
 import { useEffect } from 'react';
 
 export interface GtagEvent {

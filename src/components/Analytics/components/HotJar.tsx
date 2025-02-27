@@ -1,7 +1,7 @@
 'use client';
 
-import config from '@configs';
 import Script from 'next/script';
+import config from '@configs';
 import { type ReactElement } from 'react';
 
 const { hjsv, hjid } = config.analytics;

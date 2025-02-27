@@ -15,16 +15,16 @@ type Story = StoryObj<typeof AppProvider>;
 
 export const Default: Story = {
   args: {
-    children: <div className="p-4 bg-white dark:bg-gray-800 rounded-lg">Example Content</div>,
+    children: <div className='rounded-lg bg-white p-4 dark:bg-gray-800'>Example Content</div>,
   },
 };
 
 export const WithThemedContent: Story = {
   args: {
     children: (
-      <div className="p-4 space-y-4">
-        <div className="bg-white dark:bg-gray-800 p-4 rounded-lg">Light/Dark Theme Demo</div>
-        <p className="text-gray-900 dark:text-gray-100">This text adapts to theme</p>
+      <div className='space-y-4 p-4'>
+        <div className='rounded-lg bg-white p-4 dark:bg-gray-800'>Light/Dark Theme Demo</div>
+        <p className='text-gray-900 dark:text-gray-100'>This text adapts to theme</p>
       </div>
     ),
   },

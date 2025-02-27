@@ -8,7 +8,7 @@ const meta: Meta<typeof PriceDisplay> = {
   parameters: {
     layout: 'centered',
   },
-}
+};
 
 // Export meta separately
 export default meta;
@@ -82,7 +82,7 @@ const stories = {
       price: 0,
     },
     render: () => (
-      <div className="flex flex-col gap-4">
+      <div className='flex flex-col gap-4'>
         <PriceDisplay price={0} />
         <PriceDisplay price={9.99} />
         <PriceDisplay price={199.99} />

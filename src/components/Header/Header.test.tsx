@@ -3,15 +3,15 @@ import { maybeSnapshot } from '@utils';
 import { Header } from './Header';
 
 // Mock the dependencies
-jest.mock('@assets/svg/MinimalLogo', () => () => <div data-testid="mock-logo">Logo</div>);
+jest.mock('@assets/svg/MinimalLogo', () => () => <div data-testid='mock-logo'>Logo</div>);
 jest.mock('./MobileNavigation', () => ({
-  MobileNavigation: ({ menuContent }: { menuContent: any[] }) => (
-    <div data-testid="mock-mobile-navigation">{menuContent.length} items</div>
+  MobileNavigation: ({ menuContent }: { menuContent: unknown[] }) => (
+    <div data-testid='mock-mobile-navigation'>{menuContent.length} items</div>
   ),
 }));
 jest.mock('../Button', () => ({
   ButtonLink: ({ children, href }: { children: React.ReactNode; href: string }) => (
-    <a href={href} data-testid="mock-button-link">
+    <a href={href} data-testid='mock-button-link'>
       {children}
     </a>
   ),
@@ -56,9 +56,7 @@ describe('Header', () => {
   });
 
   it('renders with custom menu items', () => {
-    const { container } = render(
-      <Header menuContent={sampleMenuContent} menuRightContent={sampleMenuRightContent} />
-    );
+    const { container } = render(<Header menuContent={sampleMenuContent} menuRightContent={sampleMenuRightContent} />);
 
     // Use more specific selectors to avoid ambiguity with multiple "Home" texts
     expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
@@ -80,11 +78,11 @@ describe('Header', () => {
   });
 
   it('applies variant styles correctly', () => {
-    const { container: filledContainer } = render(<Header variant="filled" />);
+    const { container: filledContainer } = render(<Header variant='filled' />);
     const filledHeader = filledContainer.firstChild as HTMLElement;
     expect(filledHeader.className).toContain('bg-white');
 
-    const { container: transparentContainer } = render(<Header variant="transparent" />);
+    const { container: transparentContainer } = render(<Header variant='transparent' />);
     const transparentHeader = transparentContainer.firstChild as HTMLElement;
     expect(transparentHeader.className).toContain('bg-transparent');
 
@@ -104,7 +102,7 @@ describe('Header', () => {
   });
 
   it('renders children correctly', () => {
-    const testContent = <span data-testid="test-children">Test Content</span>;
+    const testContent = <span data-testid='test-children'>Test Content</span>;
     const { container } = render(<Header>{testContent}</Header>);
 
     expect(screen.getByTestId('test-children')).toBeInTheDocument();

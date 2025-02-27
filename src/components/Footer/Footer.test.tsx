@@ -7,7 +7,9 @@ describe('Footer', () => {
     const { container } = render(<Footer />);
 
     // Check that copyright text is present with the current year
-    expect(screen.getByText(new RegExp(`Copyright.*${new Date().getFullYear()}.*Wesolowski`, 'i'))).toBeInTheDocument();
+    const currentYear = new Date().getFullYear();
+    // eslint-disable-next-line security/detect-non-literal-regexp
+    expect(screen.getByText(new RegExp('Copyright.*' + currentYear + '.*Wesolowski', 'i'))).toBeInTheDocument();
 
     // Check that GitHub link is present
     const githubLink = screen.getByRole('link', { name: /wesolowski on github/i });
@@ -29,8 +31,8 @@ describe('Footer', () => {
   });
 
   it('applies spacing variants correctly', () => {
-    const { container: compactContainer } = render(<Footer spacing="compact" />);
-    const { container: spaciousContainer } = render(<Footer spacing="spacious" />);
+    const { container: compactContainer } = render(<Footer spacing='compact' />);
+    const { container: spaciousContainer } = render(<Footer spacing='spacious' />);
 
     const compactFooter = compactContainer.firstChild as HTMLElement;
     const spaciousFooter = spaciousContainer.firstChild as HTMLElement;
@@ -43,8 +45,8 @@ describe('Footer', () => {
   });
 
   it('applies alignment variants correctly', () => {
-    const { container: leftContainer } = render(<Footer align="left" />);
-    const { container: rightContainer } = render(<Footer align="right" />);
+    const { container: leftContainer } = render(<Footer align='left' />);
+    const { container: rightContainer } = render(<Footer align='right' />);
 
     const leftFooter = leftContainer.firstChild as HTMLElement;
     const rightFooter = rightContainer.firstChild as HTMLElement;
@@ -57,7 +59,7 @@ describe('Footer', () => {
   });
 
   it('renders children correctly', () => {
-    const testContent = <div data-testid="test-children">Extra Footer Content</div>;
+    const testContent = <div data-testid='test-children'>Extra Footer Content</div>;
     const { container } = render(<Footer>{testContent}</Footer>);
 
     expect(screen.getByTestId('test-children')).toBeInTheDocument();
@@ -70,11 +72,11 @@ describe('Footer', () => {
     // Create a custom Footer that extends the basic one and adds more social links
     const CustomFooter = () => (
       <Footer>
-        <div className="mt-6 flex space-x-4">
-          <a href="#twitter" data-testid="twitter-link">
+        <div className='mt-6 flex space-x-4'>
+          <a href='#twitter' data-testid='twitter-link'>
             Twitter
           </a>
-          <a href="#linkedin" data-testid="linkedin-link">
+          <a href='#linkedin' data-testid='linkedin-link'>
             LinkedIn
           </a>
         </div>

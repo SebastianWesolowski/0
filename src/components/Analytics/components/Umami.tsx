@@ -1,7 +1,7 @@
 'use client';
 
-import config from '@configs';
 import Script from 'next/script';
+import config from '@configs';
 import { type ReactElement } from 'react';
 
 declare global {
@@ -34,8 +34,8 @@ export function UmamiScript(): ReactElement | null {
       data-website-id={config.analytics.umamiWebsiteId}
       src={config.analytics.umamiInstance}
       data-domains={config.url.production}
-      data-cache="true"
-      data-auto-track="true"
+      data-cache='true'
+      data-auto-track='true'
       onError={(e) => {
         console.error('[Umami] Failed to load:', e);
       }}

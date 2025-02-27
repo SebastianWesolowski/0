@@ -8,7 +8,7 @@ const meta: Meta<typeof Header> = {
   parameters: {
     layout: 'fullscreen',
   },
-}
+};
 
 // Export meta separately
 export default meta;
@@ -62,10 +62,8 @@ const stories = {
   WithChildren: {
     args: {
       children: (
-        <li className="ml-6 hidden md:block">
-          <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-800">
-            New
-          </span>
+        <li className='ml-6 hidden md:block'>
+          <span className='rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-800'>New</span>
         </li>
       ),
     },

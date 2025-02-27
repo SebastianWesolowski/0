@@ -6,16 +6,18 @@ import { AppProvider } from './AppProvider';
 beforeAll(() => {
   Object.defineProperty(window, 'matchMedia', {
     writable: true,
-    value: jest.fn().mockImplementation((query: string): MediaQueryList => ({
-      matches: false,
-      media: query,
-      onchange: null,
-      addListener: jest.fn(),
-      removeListener: jest.fn(),
-      addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
-      dispatchEvent: jest.fn(),
-    })),
+    value: jest.fn().mockImplementation(
+      (query: string): MediaQueryList => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: jest.fn(),
+        removeListener: jest.fn(),
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+      })
+    ),
   });
 });
 
@@ -35,7 +37,7 @@ describe('AppProvider', () => {
   it('provides theme context to children', () => {
     const { container } = render(
       <AppProvider>
-        <div data-testid="themed-content">Content</div>
+        <div data-testid='themed-content'>Content</div>
       </AppProvider>
     );
 

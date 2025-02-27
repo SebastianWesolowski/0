@@ -16,54 +16,54 @@ describe('PriceDisplay', () => {
   });
 
   it('should render with different sizes', () => {
-    const { rerender, container: smallContainer } = render(<PriceDisplay price={99.99} size="sm" />);
+    const { rerender, container: smallContainer } = render(<PriceDisplay price={99.99} size='sm' />);
     expect(screen.getByTestId('price-display')).toHaveClass('text-sm');
     maybeSnapshot(smallContainer);
 
-    rerender(<PriceDisplay price={99.99} size="md" />);
+    rerender(<PriceDisplay price={99.99} size='md' />);
     const mediumElement = screen.getByTestId('price-display');
     expect(mediumElement).toHaveClass('text-base');
     maybeSnapshot(document.body);
 
-    rerender(<PriceDisplay price={99.99} size="lg" />);
+    rerender(<PriceDisplay price={99.99} size='lg' />);
     const largeElement = screen.getByTestId('price-display');
     expect(largeElement).toHaveClass('text-lg');
     maybeSnapshot(document.body);
 
-    rerender(<PriceDisplay price={99.99} size="xl" />);
+    rerender(<PriceDisplay price={99.99} size='xl' />);
     const xlElement = screen.getByTestId('price-display');
     expect(xlElement).toHaveClass('text-xl');
     maybeSnapshot(document.body);
   });
 
   it('should render with different intents', () => {
-    const { rerender, container: defaultContainer } = render(<PriceDisplay price={99.99} intent="default" />);
+    const { rerender, container: defaultContainer } = render(<PriceDisplay price={99.99} intent='default' />);
     expect(screen.getByTestId('price-display')).toHaveClass('text-gray-900');
     maybeSnapshot(defaultContainer);
 
-    rerender(<PriceDisplay price={99.99} intent="primary" />);
+    rerender(<PriceDisplay price={99.99} intent='primary' />);
     const primaryElement = screen.getByTestId('price-display');
     expect(primaryElement).toHaveClass('text-blue-600');
     maybeSnapshot(document.body);
 
-    rerender(<PriceDisplay price={99.99} intent="success" />);
+    rerender(<PriceDisplay price={99.99} intent='success' />);
     const successElement = screen.getByTestId('price-display');
     expect(successElement).toHaveClass('text-green-600');
     maybeSnapshot(document.body);
 
-    rerender(<PriceDisplay price={99.99} intent="warning" />);
+    rerender(<PriceDisplay price={99.99} intent='warning' />);
     const warningElement = screen.getByTestId('price-display');
     expect(warningElement).toHaveClass('text-amber-600');
     maybeSnapshot(document.body);
 
-    rerender(<PriceDisplay price={99.99} intent="danger" />);
+    rerender(<PriceDisplay price={99.99} intent='danger' />);
     const dangerElement = screen.getByTestId('price-display');
     expect(dangerElement).toHaveClass('text-red-600');
     maybeSnapshot(document.body);
   });
 
   it('should combine size and intent variants', () => {
-    const { container } = render(<PriceDisplay price={99.99} size="lg" intent="primary" />);
+    const { container } = render(<PriceDisplay price={99.99} size='lg' intent='primary' />);
     expect(screen.getByTestId('price-display')).toHaveClass('text-lg');
     expect(screen.getByTestId('price-display')).toHaveClass('text-blue-600');
     maybeSnapshot(container);
