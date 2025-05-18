@@ -1,6 +1,8 @@
-const sPrettier = require('s-prettier')
+const sPrettier = require('s-prettier');
 
 module.exports = {
-...sPrettier,
-plugins: ["prettier-plugin-tailwindcss"],
+  ...sPrettier,
+  plugins: ['prettier-plugin-tailwindcss'],
+  bracketSpacing: true,
+  tabWidth: 2,
 };

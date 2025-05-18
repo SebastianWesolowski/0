@@ -1,13 +1,14 @@
 # {{PLACEHOLDER_REPO_NAME}}
 
-<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="{{PLACEHOLDER_REPO_NAME}} package" src=".github/assets/heroImageReposytory.png"></a>
+<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="{{PLACEHOLDER_REPO_NAME}} package" src=".github/assets/heroImageReposytory-next.png"></a>
 
-**Important Links**
+## Important Links
 
 - [![npm package][npm-img]][npm-url]
 - [![Build Status][build-img]][build-url]
 - [![GitHub Contributors][github-contributors-badge]][github-contributors-badge-link]
 - [Author page]({{PLACEHOLDER_PAGE_AUTHOR}})
+- [Git Hooks Documentation](.husky/README.md)
 
 <br/><br/>
 
@@ -29,6 +30,7 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 
 - 📦 **[s-update-manager](https://github.com/SebastianWesolowski/s-update-manager)** - Manage your dependencies with centralized repozystory
 - 🎨 **[s-customize](https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/tools/customize)** - Customize your repozytory with one command
+- 🌐 **[ngrok](https://ngrok.com/)** - For local development with remote services
 - 🏎️ **[Next.js 15](https://nextjs.org/)** - Fast by default, with config optimized for performance (with **App Directory**)
 - 💅 **[Tailwind CSS](https://tailwindcss.com/)** - A utility-first CSS framework for rapid UI development
 - ✨ **[ESlint](https://eslint.org/)** and **[Prettier](https://prettier.io/)** - For clean, consistent, and error-free code
@@ -41,7 +43,6 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 - **[Storybook](https://storybook.js.org/)** - Create, test, and showcase your components
 - **Smoke Testing** and **Acceptance Tests** - For confidence in your deployments
 - **[Conventional commits git hook](https://www.conventionalcommits.org/)** - Keep your commit history neat and tidy
-- **[Observability](https://opentelemetry.io/)** - Open Telemetry integration for seamless monitoring
 - **[Absolute imports](https://nextjs.org/docs/advanced-features/module-path-aliases)** - No more spaghetti imports
 - **[Health checks](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)** - Kubernetes-compatible for robust deployments
 - **[Radix UI](https://www.radix-ui.com/)** - Headless UI components for endless customization
@@ -51,6 +52,7 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 - **Components coupling and cohesion graph** - A tool for managing component relationships
 - **[Semantic Release](https://github.com/semantic-release/semantic-release)** - for automatic changelog
 - **[T3 Env](https://env.t3.gg/)** - Manage your environment variables with ease
+- **[Husky](https://typicode.github.io/husky/)** - Git hooks made easy (see [Git Hooks Documentation](.husky/README.md))
 
 ## Table of Contents
 
@@ -81,63 +83,38 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 To get started with this boilerplate, follow these steps:
 
 1. Install the dependencies:
-
 ```bash
 yarn install
 ```
 
-2. Run the update witch s-update-manager:
-
+2. Run the update with s-update-manager:
 ```bash
 yarn s-update-manager
 ```
 
-3. Set up your repository
+3. Customize your repository:
 
-Replace variable in the `./tools/customize/customize.config.ts` script with your own details to personalize your new package:
-
-```bash
-export const config: CustomizeConfig = {
-  replacements: [
-    {
-      placeholder: "{{PLACEHOLDER_FULL_NAME_EXAMPLE}}",
-      value: "Sebastian Wesolowski",
-      files: [
-        "package.json",
-        "README.md",
-        "./docs/HowToAutoDeploy.md",
-        ".github/FUNDING.yml",
-      ],
-    },
-    {
-      placeholder: "{{PLACEHOLDER_PAGE_AUTHOR_EXAMPLE}}",
-      value: "www.wesolowski.dev",
-      files: [".github/FUNDING.yml", "package.json", "LICENSE"],
-    },
-    ...
-```
-
-You can look on example in `./tools/customize/customize.example.config.ts`
-
-Run script with:
+> [Repository Customization](./docs/WayToWrok.md#set-up-your-repository) - Personalize your project with custom details
 
 ```bash
 yarn customize
 ```
 
-or
-
-```bash
-tsx tools/customize/customize.ts
-```
-
 4. Run the development server:
-
 ```bash
 yarn dev
 ```
 
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+- [Ngrok Integration](./docs/WayToWrok.md#optional) - Expose your local server to the internet
+- [Local Preview](./docs/WayToWrok.md#check-local-preview-package) - Test your build locally
+
+## 🔗 Detailed Documentation
+
+For detailed instructions and advanced options, please refer to [How to Work with Template](./docs/WayToWrok.md):
+
+
 
 ## 🚀 Deployment
 
@@ -145,45 +122,69 @@ Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=d
 
 [![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=PLACEHOLDER_REPO_URL)
 
+### GitFlow
+
+- [Development Workflow](./docs/WayToWrok.md#-development-and-setup) - Complete setup instructions
+- [Pre-release Process](./docs/WayToWrok.md#pre-release) - From feature and dev branches
+- [Pre-production Setup](./docs/WayToWrok.md#pre-production) - Via pull requests to main
+- [Release Workflow](./docs/WayToWrok.md#release) - Automated with GitHub Actions
+
 ## 📃 Scripts Overview
+
+The template project includes a variety of configured scripts divided into logical categories:
+
+### 🚀 Development & Running
+
+- `dev` - Runs Next.js development server with turbo
+- `dev:storybook` - Runs development server and Storybook concurrently
+- `dev:tunnel` - Runs development server with ngrok exposure
+- `dev:build` - Builds production app and runs it locally
+- `build:analyze` - Builds app with bundle size analysis
+
+### 🏗️ Building
+
+- `build` - Builds app for deployment
+- `build:prod` - Builds production app with additional final steps
+- `build:prebuild` - Prepares environment before building (cleaning and copying assets)
+- `build:postbuild` - Executes post-build tasks (e.g. sitemap generation)
 
 ### 🧪 Testing
 
-- `test:*`: Runs unit and integration tests with coverage
-- `e2e:*`: Runs end-to-end tests (headless or with UI)
-- `test-storybook`: Runs Storybook tests
+- `test` - Runs all tests (unit, component, snapshot, smoke, e2e)
+- `test:unit` - Runs Jest unit tests
+- `test:components` - Runs React component tests
+- `test:snapshot` - Runs UI snapshot comparison tests
+- `test:smoke` - Runs smoke tests in Storybook
+- `test:e2e` - Runs Playwright end-to-end tests
+- `test:e2e:ui` - Runs end-to-end tests in UI mode
 
 ### 🔍 Linting & Formatting
 
-- `lint:*`: Lints and fixes code using ESLint
-- `prettier:*`: Checks and fixes code formatting
-- `eslint:*`: Runs ESLint checks and fixes
-- `staged:*`: Runs linting and formatting checks on git staged files
-- `typescript:check`: Runs TypeScript compiler checks
+- `lint` - Runs all code checking tools
+- `lint:check` - Checks code correctness without making changes
+- `lint:fix` - Automatically fixes code issues
+- `lint:prettier:check/fix` - Checks/fixes formatting with Prettier
+- `lint:eslint:check/fix` - Checks/fixes code with ESLint
+- `lint:style:check/fix` - Checks/fixes CSS styles with Stylelint
+- `lint:typescript:check` - Checks TypeScript types
 
-### 🚀 Development
+### 📊 Code Quality
 
-- `dev`: Starts the development server
-- `build`: Builds the app for production
-- `start`: Starts the production server
-- `analyze`: Analyzes bundle sizes
+- `quality:knip` - Detects unused code in project
+- `quality:coverage` - Generates test coverage report
+- `quality:coupling:graph` - Creates visualization of module dependencies
+- `quality:coupling:json` - Exports dependency data to JSON format
 
 ### 📚 Storybook
 
-- `storybook`: Starts Storybook server
-- `build-storybook`: Builds Storybook for deployment
+- `storybook` - Runs Storybook server
+- `storybook:build` - Builds static Storybook for deployment
 
-### 📝 Git Hooks & Commits
+### 🛠️ Tools & Configuration
 
-- `commit`: Creates conventional commit messages
-- `prepare`: Sets up Husky git hooks
-- `husky:*`: Manages git hooks for commits and pushes
-
-### 🛠️ Tools
-
-- `coupling-graph`: Generates coupling and cohesion graph
-- `customize`: Runs project customization script
-- `postinstall`: Applies patches to dependencies
+- `customize` - Runs project customization script
+- `update-template` - Updates project from central template repository
+- `ngrok` - Exposes local server through ngrok
 
 ## 🔗 Coupling Graph
 
@@ -195,7 +196,7 @@ yarn coupling-graph
 
 This will create a `graph.svg` file, which contains a graphical representation of the connections between your components. You can open the file with any SVG-compatible viewer.
 
-![graph](.github/assets/couplingGraph.png)
+![graph](.github/assets/couplingGraph-react.png)
 
 ## 🧪 Testing
 
@@ -204,8 +205,9 @@ This boilerplate comes with various testing setups to ensure your application's 
 ### Running Tests
 
 - **Unit and integration tests**: Run Jest tests using `yarn test`
-- **End-to-end tests (headless mode)**: Run Playwright tests in headless mode with `yarn e2e:headless`
-- **End-to-end tests (UI mode)**: Run Playwright tests with UI using `yarn e2e:ui`
+- **End-to-end tests (headless mode)**: Run Playwright tests in headless mode with `yarn test:e2e`
+- **End-to-end tests (UI mode)**: Run Playwright tests with UI using `yarn test:e2e:ui`
+
 
 ![graph](.github/assets/runningTests.png)
 
@@ -247,7 +249,7 @@ export const FilledForm: Story = {
 
 ### Smoke Testing
 
-In this boilerplate, we use Storybook's out-of-the-box support for smoke testing to verify that components render correctly without any errors. Just run `yarn test-storybook` to perform smoke testing. Remember to write stories in JSX or TSX format only. Smoke testing and a lot of other functionalities dont work well with MDX stories.
+In this boilerplate, we use Storybook's out-of-the-box support for smoke testing to verify that components render correctly without any errors. Just run `yarn test:smoke` to perform smoke testing. Remember to write stories in JSX or TSX format only. Smoke testing and a lot of other functionalities dont work well with MDX stories.
 
 ## 🎨 Styling and Design System
 
@@ -317,6 +319,7 @@ If the required environment variables are not set, you'll get an error message:
 [![Semantic Release][semantic-release-img]][semantic-release-url]
 [![GitHub License][github-license-badge]][github-license-badge-link]
 
+
 [build-img]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/actions/workflows/release.yml/badge.svg
 [build-url]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/actions/workflows/release.yml
 [downloads-img]: https://img.shields.io/npm/dt/{{PLACEHOLDER_REPO_NAME}}
@@ -331,5 +334,7 @@ If the required environment variables are not set, you'll get an error message:
 [commitizen-url]: http://commitizen.github.io/cz-cli/
 [github-license-badge]: https://img.shields.io/github/license/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}
 [github-license-badge-link]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/blob/main/LICENSE
+
+
 [github-contributors-badge]: https://img.shields.io/github/contributors/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}
 [github-contributors-badge-link]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/graphs/contributors

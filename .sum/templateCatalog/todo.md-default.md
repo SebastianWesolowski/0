@@ -1,5 +1,11 @@
-add style linter and lint-staged
 
-improve eslint config
 
-[] fix docs how to deploy
+[] github actions
+[] quality reports for release
+[] raporty podczas release: playwright-report
+[] renovate
+[] fix docs
+[] SDEBUG="false"
+
+
+

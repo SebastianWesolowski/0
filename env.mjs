@@ -13,7 +13,7 @@ export const env = createEnv({
       .optional()
       .transform((value) => value === 'true'),
     FORCE_COLOR: z
-      .enum(['1', '0'])
+      .enum(['1', '0', '2', '3'])
       .optional()
       .transform((value) => value === '1'),
   },
@@ -28,8 +28,8 @@ export const env = createEnv({
     NEXT_PUBLIC_ENV_VARIABLE: process.env.NEXT_PUBLIC_ENV_VARIABLE,
     DEVELOPMENT_ENV_VARIABLE: process.env.DEVELOPMENT_ENV_VARIABLE,
     NEXT_PUBLIC_DEVELOPMENT_ENV_VARIABLE: process.env.NEXT_PUBLIC_DEVELOPMENT_ENV_VARIABLE,
-    ENV_LOCAL_VARIABLE: process.env.ENV_LOCAL_VARIABLE,
-    NEXT_PUBLIC_ENV_LOCAL_VARIABLE: process.env.NEXT_PUBLIC_ENV_LOCAL_VARIABLE,
+    LOCAL_ENV_VARIABLE: process.env.LOCAL_ENV_VARIABLE,
+    NEXT_PUBLIC_LOCAL_ENV_VARIABLE: process.env.NEXT_PUBLIC_LOCAL_ENV_VARIABLE,
     PRODUCTION_ENV_VARIABLE: process.env.PRODUCTION_ENV_VARIABLE,
     NEXT_PUBLIC_PRODUCTION_ENV_VARIABLE: process.env.NEXT_PUBLIC_PRODUCTION_ENV_VARIABLE,
   },

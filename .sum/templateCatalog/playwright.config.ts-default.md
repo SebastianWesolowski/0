@@ -1,53 +1,50 @@
-import { defineConfig, devices } from "@playwright/test"
+import { defineConfig, devices } from '@playwright/test';
 
-/\*\*
+/**
+ * Read environment variables from file.
+ * https://github.com/motdotla/dotenv
+ */
+// require('dotenv').config();
 
-- Read environment variables from file.
-- https://github.com/motdotla/dotenv
-  \*/
-  // require('dotenv').config();
-
-/\*\*
-
-- See https://playwright.dev/docs/test-configuration.
-  _/
-  export default defineConfig({
-  testDir: "./e2e",
-  /_ Run tests in files in parallel _/
+/**
+ * See https://playwright.dev/docs/test-configuration.
+ */
+export default defineConfig({
+  testDir: './e2e',
+  /* Run tests in files in parallel */
   fullyParallel: true,
-  /_ Fail the build on CI if you accidentally left test.only in the source code. _/
+  /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  /_ Retry on CI only _/
+  /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
-  /_ Opt out of parallel tests on CI. _/
+  /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
-  /_ Reporter to use. See https://playwright.dev/docs/test-reporters _/
-  reporter: "html",
-  /_ Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. _/
+  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+  reporter: 'html',
+  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-  /_ Base URL to use in actions like `await page.goto('/')`. \*/
-  baseURL: "http://127.0.0.1:3000",
+    /* Base URL to use in actions like `await page.goto('/')`. */
+    baseURL: 'http://127.0.0.1:3000',
 
-      /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-      trace: "on-first-retry",
-
+    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    trace: 'on-first-retry',
   },
 
-/_ Configure projects for major browsers _/
-projects: [
-{
-name: "chromium",
-use: { ...devices["Desktop Chrome"] },
-},
-
+  /* Configure projects for major browsers */
+  projects: [
     {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
     },
 
     {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
     },
 
     /* Test against mobile viewports. */
@@ -69,13 +66,12 @@ use: { ...devices["Desktop Chrome"] },
     //   name: 'Google Chrome',
     //   use: { ..devices['Desktop Chrome'], channel: 'chrome' },
     // },
+  ],
 
-],
-
-/_ Run your local dev server before starting the tests _/
-webServer: {
-command: "pnpm dev",
-url: "http://127.0.0.1:3000",
-reuseExistingServer: !process.env.CI,
-},
-})
+  /* Run your local dev server before starting the tests */
+  webServer: {
+    command: 'yarn dev',
+    url: 'http://127.0.0.1:3000',
+    reuseExistingServer: !process.env.CI,
+  },
+});

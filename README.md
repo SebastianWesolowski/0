@@ -1,8 +1,8 @@
 # s-template
 
-<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="s-template package" src=".github/assets/heroImageReposytory.png"></a>
+<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="s-template package" src=".github/assets/heroImageReposytory-next.png"></a>
 
-**Important Links**
+## Important Links
 
 - [![npm package][npm-img]][npm-url]
 - [![Build Status][build-img]][build-url]
@@ -83,79 +83,38 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 To get started with this boilerplate, follow these steps:
 
 1. Install the dependencies:
-
 ```bash
 yarn install
 ```
 
-2. Run the update witch s-update-manager:
-
+2. Run the update with s-update-manager:
 ```bash
 yarn s-update-manager
 ```
 
-3. Set up your repository
+3. Customize your repository:
 
-Replace variable in the `./tools/customize/customize.config.ts` script with your own details to personalize your new package:
-
-```bash
-export const config: CustomizeConfig = {
-  replacements: [
-    {
-      placeholder: "{{PLACEHOLDER_FULL_NAME_EXAMPLE}}",
-      value: "Sebastian Wesolowski",
-      files: [
-        "package.json",
-        "README.md",
-        "./docs/HowToAutoDeploy.md",
-        ".github/FUNDING.yml",
-      ],
-    },
-    {
-      placeholder: "{{PLACEHOLDER_PAGE_AUTHOR_EXAMPLE}}",
-      value: "www.wesolowski.dev",
-      files: [".github/FUNDING.yml", "package.json", "LICENSE"],
-    },
-    ...
-```
-
-You can look on example in `./tools/customize/customize.example.config.ts`
-
-Run script with:
+> [Repository Customization](./docs/WayToWrok.md#set-up-your-repository) - Personalize your project with custom details
 
 ```bash
 yarn customize
 ```
 
-or
-
-```bash
-tsx tools/customize/customize.ts
-```
-
-4. Optional
-
-- 4.1. Add ngrok token in .env file for local development
-
-  ```bash
-   NGROK_AUTH_TOKEN=your_ngrok_token
-  ```
-
-  after that you can run ngrok to expose your local server to the internet:
-
-  ```bash
-    yarn dev:tunnel
-  ```
-
-  [![ngrok](./.github/assets/ngrok.png)](https://dashboard.ngrok.com/get-started/setup/macos)
-
-5. Run the development server:
-
+4. Run the development server:
 ```bash
 yarn dev
 ```
 
-6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+- [Ngrok Integration](./docs/WayToWrok.md#optional) - Expose your local server to the internet
+- [Local Preview](./docs/WayToWrok.md#check-local-preview-package) - Test your build locally
+
+## 🔗 Detailed Documentation
+
+For detailed instructions and advanced options, please refer to [How to Work with Template](./docs/WayToWrok.md):
+
+
 
 ## 🚀 Deployment
 
@@ -163,50 +122,69 @@ Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=d
 
 [![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=PLACEHOLDER_REPO_URL)
 
+### GitFlow
+
+- [Development Workflow](./docs/WayToWrok.md#-development-and-setup) - Complete setup instructions
+- [Pre-release Process](./docs/WayToWrok.md#pre-release) - From feature and dev branches
+- [Pre-production Setup](./docs/WayToWrok.md#pre-production) - Via pull requests to main
+- [Release Workflow](./docs/WayToWrok.md#release) - Automated with GitHub Actions
+
 ## 📃 Scripts Overview
 
-### Development
+The template project includes a variety of configured scripts divided into logical categories:
 
-- `dev`: Starts the development server
-- `dev:storybook`: Starts development server with storybook server
-- `dev:tunnel`: Starts the development server with **[ngrok](https://ngrok.com/)**
-- `dev:build`: Builds localy the app for production
+### 🚀 Development & Running
 
-### Production
+- `dev` - Runs Next.js development server with turbo
+- `dev:storybook` - Runs development server and Storybook concurrently
+- `dev:tunnel` - Runs development server with ngrok exposure
+- `dev:build` - Builds production app and runs it locally
+- `build:analyze` - Builds app with bundle size analysis
 
-- `build`: Builds the app for production
-- `build:prod`: Builds the app for production
+### 🏗️ Building
+
+- `build` - Builds app for deployment
+- `build:prod` - Builds production app with additional final steps
+- `build:prebuild` - Prepares environment before building (cleaning and copying assets)
+- `build:postbuild` - Executes post-build tasks (e.g. sitemap generation)
 
 ### 🧪 Testing
 
-- `build:analyze`: Builds the app for production and analyzes the bundle size
-- `test:*`: Runs unit and integration tests with coverage
-- `e2e:*`: Runs end-to-end tests (headless or with UI)
+- `test` - Runs all tests (unit, component, snapshot, smoke, e2e)
+- `test:unit` - Runs Jest unit tests
+- `test:components` - Runs React component tests
+- `test:snapshot` - Runs UI snapshot comparison tests
+- `test:smoke` - Runs smoke tests in Storybook
+- `test:e2e` - Runs Playwright end-to-end tests
+- `test:e2e:ui` - Runs end-to-end tests in UI mode
 
 ### 🔍 Linting & Formatting
 
-- `lint:*`: Lints and fixes code using ESLint
-- `prettier:*`: Checks and fixes code formatting
-- `eslint:*`: Runs ESLint checks and fixes
-- `staged:*`: Runs linting and formatting checks on git staged files
-- `test:typescript`: Runs TypeScript compiler checks
+- `lint` - Runs all code checking tools
+- `lint:check` - Checks code correctness without making changes
+- `lint:fix` - Automatically fixes code issues
+- `lint:prettier:check/fix` - Checks/fixes formatting with Prettier
+- `lint:eslint:check/fix` - Checks/fixes code with ESLint
+- `lint:style:check/fix` - Checks/fixes CSS styles with Stylelint
+- `lint:typescript:check` - Checks TypeScript types
+
+### 📊 Code Quality
+
+- `quality:knip` - Detects unused code in project
+- `quality:coverage` - Generates test coverage report
+- `quality:coupling:graph` - Creates visualization of module dependencies
+- `quality:coupling:json` - Exports dependency data to JSON format
 
 ### 📚 Storybook
 
-- `storybook`: Starts Storybook server
-- `storybook:build`: Builds Storybook for deployment
+- `storybook` - Runs Storybook server
+- `storybook:build` - Builds static Storybook for deployment
 
-### 📝 Git Hooks & Commits
+### 🛠️ Tools & Configuration
 
-- `commit`: Creates conventional commit messages
-- `prepare`: Sets up Husky git hooks
-- `husky:*`: Manages git hooks for commits and pushes
-
-### 🛠️ Tools
-
-- `coupling-graph`: Generates coupling and cohesion graph
-- `customize`: Runs project customization script
-- `postinstall`: Applies patches to dependencies
+- `customize` - Runs project customization script
+- `update-template` - Updates project from central template repository
+- `ngrok` - Exposes local server through ngrok
 
 ## 🔗 Coupling Graph
 
@@ -218,7 +196,7 @@ yarn coupling-graph
 
 This will create a `graph.svg` file, which contains a graphical representation of the connections between your components. You can open the file with any SVG-compatible viewer.
 
-![graph](.github/assets/couplingGraph.png)
+![graph](.github/assets/couplingGraph-react.png)
 
 ## 🧪 Testing
 
@@ -229,6 +207,7 @@ This boilerplate comes with various testing setups to ensure your application's 
 - **Unit and integration tests**: Run Jest tests using `yarn test`
 - **End-to-end tests (headless mode)**: Run Playwright tests in headless mode with `yarn test:e2e`
 - **End-to-end tests (UI mode)**: Run Playwright tests with UI using `yarn test:e2e:ui`
+
 
 ![graph](.github/assets/runningTests.png)
 
@@ -340,6 +319,7 @@ If the required environment variables are not set, you'll get an error message:
 [![Semantic Release][semantic-release-img]][semantic-release-url]
 [![GitHub License][github-license-badge]][github-license-badge-link]
 
+
 [build-img]: https://github.com/SebastianWesolowski/s-template/actions/workflows/release.yml/badge.svg
 [build-url]: https://github.com/SebastianWesolowski/s-template/actions/workflows/release.yml
 [downloads-img]: https://img.shields.io/npm/dt/s-template
@@ -354,5 +334,7 @@ If the required environment variables are not set, you'll get an error message:
 [commitizen-url]: http://commitizen.github.io/cz-cli/
 [github-license-badge]: https://img.shields.io/github/license/SebastianWesolowski/s-template
 [github-license-badge-link]: https://github.com/SebastianWesolowski/s-template/blob/main/LICENSE
+
+
 [github-contributors-badge]: https://img.shields.io/github/contributors/SebastianWesolowski/s-template
 [github-contributors-badge-link]: https://github.com/SebastianWesolowski/s-template/graphs/contributors
