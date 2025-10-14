@@ -1,13 +1,13 @@
-# s-template
+# {{PLACEHOLDER_REPO_NAME}}
 
-<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="s-template package" src=".github/assets/heroImageReposytory-next.png"></a>
+<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="{{PLACEHOLDER_REPO_NAME}} package" src=".github/assets/heroImageReposytory-next.png"></a>
 
 ## Important Links
 
 - [![npm package][npm-img]][npm-url]
 - [![Build Status][build-img]][build-url]
 - [![GitHub Contributors][github-contributors-badge]][github-contributors-badge-link]
-- [Author page](https://www.wesolowski.dev)
+- [Author page](https://{{PLACEHOLDER_PAGE_AUTHOR}})
 - [Git Hooks Documentation](.husky/README.md)
 
 <br/><br/>
@@ -22,14 +22,14 @@
 
 <br/>
 
-A template for creating npm packages using TypeScript
+{{A template for creating ...}}
 
 ### Integrated features
 
 Don't worry, with this template you will anyways get all the awesomeness you need:
 
 - 📦 **[s-update-manager](https://github.com/SebastianWesolowski/s-update-manager)** - Manage your dependencies with centralized repozystory
-- 🎨 **[s-customize](https://github.com/SebastianWesolowski/s-template/tools/customize)** - Customize your repozytory with one command
+- 🎨 **[s-customize](https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/tools/customize)** - Customize your repozytory with one command
 - 🌐 **[ngrok](https://ngrok.com/)** - For local development with remote services
 - 🏎️ **[Next.js 15](https://nextjs.org/)** - Fast by default, with config optimized for performance (with **App Directory**)
 - 💅 **[Tailwind CSS](https://tailwindcss.com/)** - A utility-first CSS framework for rapid UI development
@@ -319,19 +319,20 @@ If the required environment variables are not set, you'll get an error message:
 [![Semantic Release][semantic-release-img]][semantic-release-url]
 [![GitHub License][github-license-badge]][github-license-badge-link]
 
-[build-img]: https://github.com/SebastianWesolowski/s-template/actions/workflows/release.yml/badge.svg
-[build-url]: https://github.com/SebastianWesolowski/s-template/actions/workflows/release.yml
-[downloads-img]: https://img.shields.io/npm/dt/s-template
-[downloads-url]: https://www.npmtrends.com/s-template
-[npm-img]: https://img.shields.io/npm/v/s-template
-[npm-url]: https://www.npmjs.com/package/s-template
-[issues-img]: https://img.shields.io/github/issues/SebastianWesolowski/s-template
-[issues-url]: https://github.com/SebastianWesolowski/s-template/issues
+[build-img]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/actions/workflows/release.yml/badge.svg
+[build-url]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/actions/workflows/release.yml
+[downloads-img]: https://img.shields.io/npm/dt/{{PLACEHOLDER_REPO_NAME}}
+[downloads-url]: https://www.npmtrends.com/{{PLACEHOLDER_REPO_NAME}}
+[npm-img]: https://img.shields.io/npm/v/{{PLACEHOLDER_REPO_NAME}}
+[npm-url]: https://www.npmjs.com/package/{{PLACEHOLDER_REPO_NAME}}
+[issues-img]: https://img.shields.io/github/issues/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}
+[issues-url]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/issues
 [semantic-release-img]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-release-url]: https://github.com/semantic-release/semantic-release
 [commitizen-img]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
 [commitizen-url]: http://commitizen.github.io/cz-cli/
-[github-license-badge]: https://img.shields.io/github/license/SebastianWesolowski/s-template
-[github-license-badge-link]: https://github.com/SebastianWesolowski/s-template/blob/main/LICENSE
-[github-contributors-badge]: https://img.shields.io/github/contributors/SebastianWesolowski/s-template
-[github-contributors-badge-link]: https://github.com/SebastianWesolowski/s-template/graphs/contributors
+[github-license-badge]: https://img.shields.io/github/license/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}
+[github-license-badge-link]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/blob/main/LICENSE
+[github-contributors-badge]: https://img.shields.io/github/contributors/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}
+[github-contributors-badge]: https://img.shields.io/github/contributors/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}
+[github-contributors-badge-link]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/graphs/contributors
